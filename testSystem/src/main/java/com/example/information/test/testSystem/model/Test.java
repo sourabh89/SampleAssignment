@@ -4,56 +4,57 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 // Mongo database annotation.
-@Document(collection= "test")
+@Document(collection= "studentDetails")
 public class Test {
 
 	@Id
-	private int id;
-	private int[] numberMeetNumbers;
-	private String duplicateCharacters;
-	private String whiteSpace;
+	private int studentId;
+	private String studentName;
+	private String studentClass;
+	private float totalMarks;
 
 	public Test() {	}
 
-	public int getId() {
-		return id;
+
+	public int  getStudentId() {
+		return studentId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
 	}
 
-	public int[] getNumberMeetNumbers() {
-		return numberMeetNumbers;
+	public String getStudentName() {
+		return studentName;
 	}
 
-	public void setNumberMeetNumbers(int[] numberMeetNumbers) {
-		this.numberMeetNumbers = numberMeetNumbers;
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 
-	public String getDuplicateCharacters() {
-		return duplicateCharacters;
+	public String getStudentClass() {
+		return studentClass;
 	}
 
-	public void setDuplicateCharacters(String duplicateCharacters) {
-		this.duplicateCharacters = duplicateCharacters;
+	public void setStudentClass(String studentClass) {
+		this.studentClass = studentClass;
 	}
 
-	public String getWhiteSpace() {
-		return whiteSpace;
+	public float getTotalMarks() {
+		return totalMarks;
 	}
 
-	public void setWhiteSpace(String whiteSpace) {
-		this.whiteSpace = whiteSpace;
+	public void setTotalMarks(float totalMarks) {
+		this.totalMarks = totalMarks;
 	}
 
 	@Override
 	public String toString() {
 		return "Test{" +
-				"id=" + id +
-				", numberMeetNumbers=" + numberMeetNumbers +
-				", duplicateCharacters='" + duplicateCharacters + '\'' +
-				", whiteSpace='" + whiteSpace + '\'' +
+				"studentId=" + studentId   +
+				", studentName='" + studentName + '\'' +
+				", studentClass='" + studentClass + '\'' +
+				", totalMarks=" + totalMarks +
 				'}';
 	}
 }

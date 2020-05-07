@@ -34,7 +34,7 @@ public class Testcontroller {
 	 * @param tst
 	 * @return
 	 */
-	@PostMapping(value= "/incoming")
+	@PostMapping(value= "/create")
 	public String create(@RequestBody List<Test> tst) {
 		System.out.println("sss");
 		logger.debug("Saving data.");
@@ -71,8 +71,9 @@ public class Testcontroller {
 	 */
 	@PutMapping(value= "/update/{test-id}")
 	public String update(@PathVariable(value= "test-id") int id, @RequestBody Test e) {
+		System.out.println("HEY");
 		logger.debug("Updating test data with test-id= {}.", id);
-		e.setId(id);
+		e.setStudentId(id);
 		serv.updateTest(e);
 		return "test record for test-id= " + id + " updated.";
 	}
